@@ -1,0 +1,16 @@
+.main-form {
+    width: 450px;
+    height: 500px;
+    margin: auto;
+}
+#container {
+    width: 450px;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 25px;
+
+}
+body {
+    background-image: url("books.jpg");
+    background-color: #cccccc;
+   }

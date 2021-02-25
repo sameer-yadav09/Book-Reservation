@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Reservation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
+</head>
+
+<body>
+   
+
+    <form action="" class="container" id="container" >
+        <h1>Book Details</h1>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="bookname">Book Name</label>
+                    <input type="text" name="bookname" id="bookname" class="form-control is-invalid">
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="authname">Author's Name</label>
+                    <input type="text" name="authname" id="authname" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bookid">Book ID</label>
+            <input type="text" name="bookid" id="bookid" class="form-control" required>
+
+        </div>
+        <div class="form-group">
+            <label for="Genres">Category</label>
+            <input type="text" name="Genres" id="Genres" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="action">Action</label>
+            <select name="action" id="action" class="form-control">
+                <option value="issue">Issue</option>
+                <option value="return">Return</option>
+            </select>
+        </div>
+       
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <br>
+        
+    </form>
+
+    <script>
+        if (annyang) {
+          
+          var commands = {
+            'write book name *tag' : function(variable){
+                let bname = document.getElementById(bookname);
+                bookname.value = variable;
+            },
+            "write author's name *tag" : function(variable){
+                let auname = document.getElementById(authname);
+                authname.value = variable;
+            },
+            'write book id *tag' : function(variable){
+                let bid = document.getElementById(bookid);
+                bookid.value = variable;
+            },
+            'write book category *tag' : function(variable){
+                let bgenre = document.getElementById(Genres);
+                Genres.value = variable;
+            },
+            'set action to *tag' : function(variable){
+                let baction = document.getElementById(action);
+                action.value = variable;
+            },
+            
+            }
+            
+          };
+        
+          
+          annyang.addCommands(commands);
+        
+          // Start listening. You can call this here, or attach this call to an event, button, etc.
+          annyang.start();
+        
+        </script>
+    
+    
+    
+</body>
+
+</html>
